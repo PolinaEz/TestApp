@@ -4,7 +4,6 @@ namespace TestApp
 {
     public static class Program
     {
-        private static bool isRunning = true;
         private static List<Station> list = new();
 
         private const string importFile = "257.csv";
