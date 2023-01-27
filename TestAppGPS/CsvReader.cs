@@ -23,19 +23,20 @@ namespace TestApp
 
             while ((line = streamReader.ReadLine()) != null)
             {
-                if (line.Split(',')[0] != "GSM")
+                string[] splittedLine = line.Split(',');
+                if (splittedLine[0] != "GSM")
                 {
                     continue;
                 }
 
                 records.Add(new Station
                 {
-                    Mcc = int.Parse(line.Split(',')[1], CultureInfo.InvariantCulture),
-                    Mnc = int.Parse(line.Split(',')[2], CultureInfo.InvariantCulture),
-                    Lac = int.Parse(line.Split(',')[3], CultureInfo.InvariantCulture),
-                    CellId = int.Parse(line.Split(',')[4], CultureInfo.InvariantCulture),                  
-                    Long = double.Parse(line.Split(',')[6], CultureInfo.InvariantCulture),
-                    Lat = double.Parse(line.Split(',')[7], CultureInfo.InvariantCulture),
+                    Mcc = int.Parse(splittedLine[1], CultureInfo.InvariantCulture),
+                    Mnc = int.Parse(splittedLine[2], CultureInfo.InvariantCulture),
+                    Lac = int.Parse(splittedLine[3], CultureInfo.InvariantCulture),
+                    CellId = int.Parse(splittedLine[4], CultureInfo.InvariantCulture),                  
+                    Long = double.Parse(splittedLine[6], CultureInfo.InvariantCulture),
+                    Lat = double.Parse(splittedLine[7], CultureInfo.InvariantCulture),
                 });
             }
 

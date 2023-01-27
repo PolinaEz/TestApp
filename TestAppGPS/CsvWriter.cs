@@ -25,8 +25,6 @@ namespace TestApp
             {
                 this.writer.WriteLine($"{station.Mcc},{station.Mnc},{station.Lac},{station.CellId},{station.Long.ToString(CultureInfo.CreateSpecificCulture("en-US"))},{station.Lat.ToString(CultureInfo.CreateSpecificCulture("en-US"))}");
             }
-
-            this.writer.Close();
         }
     }
 }
