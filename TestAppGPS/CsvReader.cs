@@ -24,7 +24,7 @@ namespace TestApp
             while ((line = streamReader.ReadLine()) != null)
             {
                 string[] splittedLine = line.Split(',');
-                if (splittedLine[0] != "GSM")
+                if (splittedLine[0].Equals("GSM", StringComparison.OrdinalIgnoreCase))
                 {
                     continue;
                 }

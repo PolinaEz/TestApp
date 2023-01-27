@@ -22,7 +22,7 @@ namespace TestApp
                 using (FileStream fileStream = new FileStream(command, FileMode.Open))
                 {
                     CsvReader reader = new CsvReader(new StreamReader(fileStream));
-                    list = new List<Station>(reader.ReadAll());
+                    list = reader.ReadAll();
                 }
             }
             catch

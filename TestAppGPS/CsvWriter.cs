@@ -21,9 +21,11 @@ namespace TestApp
 
         public void Write(List<Station> stations)
         {
+            var format = CultureInfo.CreateSpecificCulture("en-US");
+            
             foreach (Station station in stations)
             {
-                this.writer.WriteLine($"{station.Mcc},{station.Mnc},{station.Lac},{station.CellId},{station.Long.ToString(CultureInfo.CreateSpecificCulture("en-US"))},{station.Lat.ToString(CultureInfo.CreateSpecificCulture("en-US"))}");
+                this.writer.WriteLine($"{station.Mcc},{station.Mnc},{station.Lac},{station.CellId},{station.Long.ToString(format)},{station.Lat.ToString(format)}");
             }
         }
     }
